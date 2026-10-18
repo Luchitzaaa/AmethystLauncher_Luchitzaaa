@@ -1,0 +1,20 @@
+{
+  "name": "amethyst-launcher",
+  "productName": "Amethyst Launcher",
+  "version": "7.0.0",
+  "description": "Minecraft: Java Edition launcher with Microsoft account sign-in and Fabric mod support.",
+  "main": "src/main/main.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test \"test/unit/*.test.js\"",
+    "test:ui": "electron . --ui-selftest",
+    "dist": "node scripts/package.mjs",
+    "icons": "electron scripts/make-icons.js"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "44.7.2"
+  }
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://cdn.modrinth.com https://textures.minecraft.net; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amethyst Launcher</title>
+  <link rel="stylesheet" href="styles/app.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body class="boot">
+  <div class="scene" id="scene" aria-hidden="true"></div>
+  <div class="intro" id="intro" aria-hidden="true">
+    <span class="intro-ring"></span>
+    <span class="intro-ring r2"></span>
+    <img src="assets/logo.svg" alt="" class="intro-logo">
+    <span class="intro-word">AMETHYST</span>
+  </div>
+
+  <header class="titlebar">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="" class="brand-logo">
+      <span class="brand-name">AMETHYST</span>
+      <span class="brand-tag">launcher</span>
+    </div>
+    <div class="titlebar-center" id="titlebar-status"></div>
+    <div class="titlebar-right">
+      <button class="account-chip" id="account-chip" type="button" aria-label="Accounts" data-i18n-aria="Accounts">
+        <span class="skin-head" id="account-head"></span>
+        <span class="account-name" id="account-name">Sign in</span>
+        <svg viewBox="0 0 24 24" class="chev" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="win-controls">
+        <button type="button" data-win="minimize" aria-label="Minimize" data-i18n-aria="Minimize"><svg viewBox="0 0 12 12"><path d="M2 6h8"/></svg></button>
+        <button type="button" data-win="maximize" aria-label="Maximize" data-i18n-aria="Maximize"><svg viewBox="0 0 12 12"><rect x="2.5" y="2.5" width="7" height="7" rx="1"/></svg></button>
+        <button type="button" data-win="close" class="close" aria-label="Close" data-i18n-aria="Close"><svg viewBox="0 0 12 12"><path d="M3 3l6 6M9 3l-6 6"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar" aria-label="Navigation" data-i18n-aria="Navigation">
+    <div class="nav-indicator" id="nav-indicator"></div>
+    <button class="nav-item" data-page="home" type="button">
+      <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span data-i18n="Home">Home</span>
+    </button>
+    <button class="nav-item" data-page="instances" type="button">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span data-i18n="Instances">Instances</span>
+    </button>
+    <button class="nav-item" data-page="mods" type="button">
+      <svg viewBox="0 0 24 24"><path d="M12 2l8.5 5v10L12 22l-8.5-5V7z"/><path d="M12 22V12M3.5 7L12 12l8.5-5"/></svg><span data-i18n="Mods">Mods</span>
+    </button>
+    <button class="nav-item" data-page="gallery" type="button">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M21 16l-5.5-5.5L5 20"/></svg><span data-i18n="Gallery">Gallery</span>
+    </button>
+    <button class="nav-item" data-page="options" type="button">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><span data-i18n="Options">Options</span>
+    </button>
+    <button class="nav-item" data-page="console" type="button">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span data-i18n="Console">Console</span>
+    </button>
+    <div class="sidebar-spacer"></div>
+    <div class="sidebar-version" id="app-version"></div>
+  </nav>
+
+  <main class="content" id="content" tabindex="-1"></main>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <div class="modal-root" id="modal-root"></div>
+</body>
+</html>

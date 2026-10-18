@@ -1,0 +1,119 @@
+{
+    "id":  "26.3",
+    "type":  "release",
+    "mainClass":  "net.minecraft.client.main.Main",
+    "assetIndex":  {
+                       "id":  "34"
+                   },
+    "arguments":  {
+                      "jvm":  [
+                                  "-cp",
+                                  "${classpath}"
+                              ],
+                      "game":  [
+                                   "--username",
+                                   "${auth_player_name}",
+                                   "--version",
+                                   "${version_name}",
+                                   "--gameDir",
+                                   "${game_directory}",
+                                   "--assetsDir",
+                                   "${assets_root}",
+                                   "--assetIndex",
+                                   "${assets_index_name}",
+                                   "--uuid",
+                                   "${auth_uuid}",
+                                   "--accessToken",
+                                   "${auth_access_token}",
+                                   "--clientId",
+                                   "${clientid}",
+                                   "--xuid",
+                                   "${auth_xuid}",
+                                   "--versionType",
+                                   "${version_type}",
+                                   {
+                                       "rules":  [
+                                                     {
+                                                         "action":  "allow",
+                                                         "features":  {
+                                                                          "is_demo_user":  true
+                                                                      }
+                                                     }
+                                                 ],
+                                       "value":  "--demo"
+                                   },
+                                   {
+                                       "rules":  [
+                                                     {
+                                                         "action":  "allow",
+                                                         "features":  {
+                                                                          "has_custom_resolution":  true
+                                                                      }
+                                                     }
+                                                 ],
+                                       "value":  [
+                                                     "--width",
+                                                     "${resolution_width}",
+                                                     "--height",
+                                                     "${resolution_height}"
+                                                 ]
+                                   },
+                                   {
+                                       "rules":  [
+                                                     {
+                                                         "action":  "allow",
+                                                         "features":  {
+                                                                          "has_quick_plays_support":  true
+                                                                      }
+                                                     }
+                                                 ],
+                                       "value":  [
+                                                     "--quickPlayPath",
+                                                     "${quickPlayPath}"
+                                                 ]
+                                   },
+                                   {
+                                       "rules":  [
+                                                     {
+                                                         "action":  "allow",
+                                                         "features":  {
+                                                                          "is_quick_play_singleplayer":  true
+                                                                      }
+                                                     }
+                                                 ],
+                                       "value":  [
+                                                     "--quickPlaySingleplayer",
+                                                     "${quickPlaySingleplayer}"
+                                                 ]
+                                   },
+                                   {
+                                       "rules":  [
+                                                     {
+                                                         "action":  "allow",
+                                                         "features":  {
+                                                                          "is_quick_play_multiplayer":  true
+                                                                      }
+                                                     }
+                                                 ],
+                                       "value":  [
+                                                     "--quickPlayMultiplayer",
+                                                     "${quickPlayMultiplayer}"
+                                                 ]
+                                   },
+                                   {
+                                       "rules":  [
+                                                     {
+                                                         "action":  "allow",
+                                                         "features":  {
+                                                                          "is_quick_play_realms":  true
+                                                                      }
+                                                     }
+                                                 ],
+                                       "value":  [
+                                                     "--quickPlayRealms",
+                                                     "${quickPlayRealms}"
+                                                 ]
+                                   }
+                               ]
+                  }
+}
